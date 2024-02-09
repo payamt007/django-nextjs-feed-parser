@@ -4,5 +4,5 @@ export default function IndexPage() {
 }
 
 export const metadata = {
-  title: 'Feed Parser Django Nextjs App',
+  title: 'Feed Parser Django Next.js App',
 }
