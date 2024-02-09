@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
 from pathlib import Path
+
 from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -38,7 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "base",
+    "rss_parser",
     "authentication",
     "drf_spectacular",
     "corsheaders",
@@ -161,7 +162,11 @@ SPECTACULAR_SETTINGS = {
     "SERVE_INCLUDE_SCHEMA": False,
 }
 
-FEED_READER = {"MAX_FEED_READER_ERRORS": 5, "FEED_READER_RETRY_TIME": 15}
+FEED_READER = {
+    "MAX_FEED_READER_ERRORS": 5,
+    "FEED_READER_RETRY_TIME": 15,
+    "DEFAULT_PARSING_TIME_LOOP": 20,
+}
 
 CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
